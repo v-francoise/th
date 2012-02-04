@@ -1,0 +1,33 @@
+{% if result_hidden_fields %}
+<div class="hiddenfields">
+	{# DIV for HTML validation #}
+	{% for item in result_hidden_fields %}{{ item }}{% endfor %}
+</div>
+{% endif %}
+
+{% if results %} <h1>Sub List</h1>
+<div class="module changelist-results">
+	<table cellspacing="0">
+		<thead>
+			<tr>
+				<th class=" action-checkbox-column">
+					<input type="checkbox" id="action-toggle">
+				</th>
+				{% for header in result_headers %}
+					<th class="">{{header.name}}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for result in results %}
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td class="action-checkbox">
+					<input type="checkbox" class="action-select" value="{{result.id}}" name="_selected_action">
+				</td>
+				<th><a href="{{result.id}}/">{{result}}</a></th>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
