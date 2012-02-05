@@ -47,6 +47,10 @@ sys.path.append(DOCUMENT_ROOT + '/src/temple_horadrim')
 import django.core.handlers.wsgi
 
 def app(application):
+    '''
+    Our CGI application
+    @param application:
+    '''
     environ = dict(os.environ.items())
     environ['wsgi.input'] = sys.stdin
     environ['wsgi.errors'] = sys.stderr

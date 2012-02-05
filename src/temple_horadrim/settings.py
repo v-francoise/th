@@ -274,7 +274,7 @@ FLUENT_DASHBOARD_APP_GROUPS =(
             'google_analytics.*',
             'temple_horadrim.models.Profile',
         ),
-        'module': 'fluent_dashboard.modules.AppIconList',
+        'module': 'temple_horadrim.dashboard.CustomAppIconList',
         'collapsible': False,
     }),
     #(_('Developer tools'), ()),
